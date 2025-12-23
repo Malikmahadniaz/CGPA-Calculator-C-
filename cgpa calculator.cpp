@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <vector>
+#include<fstream>
 using namespace std;
 
 struct Course{
@@ -63,5 +64,6 @@ int main()
     }
 	
 }
+
 
 
