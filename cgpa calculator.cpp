@@ -48,6 +48,20 @@ int main()
 	}
 	cout << "\nTotal Credits: " << totalCredits;
 	cout << "\nCGPA: " << CGPA << endl;
+	ofstream outFile("CGPA_Report.txt");
+    if (outFile.is_open()) {
+        outFile << "Course-wise Grades:\n";
+        outFile << "Course\tCredit\tMarks\tGrade\tGrade Point\n";
+        for (int i=0; i< courses.size(); i++){
+		outFile << courses[i].name << "\t" << courses[i].credit << "\t" << courses[i].marks << "\t" << courses[i].gpa << "\t" << courses[i].grade << endl;
+	}
+        outFile << "\nTotal Credits: " << totalCredits;
+        outFile << "\nTotal Grade Points: " << totalGpa;
+        outFile << "\nCGPA: " << CGPA << endl;
+        outFile.close();
+        cout << "\nCGPA report saved to CGPA_Report.txt\n";
+    }
 	
 }
+
 
